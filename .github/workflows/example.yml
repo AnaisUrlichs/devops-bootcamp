@@ -38,7 +38,7 @@ jobs:
   security:
     runs-on: ubuntu-latest
     needs: build
-    allow-failure: true
+    continue-on-error: true
     steps:
     - name: Run Snyk to check Docker image for vulnerabilities
       uses: snyk/actions/docker@master
