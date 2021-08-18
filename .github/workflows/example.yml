@@ -50,6 +50,7 @@ jobs:
 
   terraform:
     name: "Terraform"
+    needs: build
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
@@ -60,6 +61,8 @@ jobs:
         with:
           terraform_version: 1.0.4
           cli_config_credentials_token: ${{ secrets.TF_VAR_TERRAFORM_CLOUD_TOKEN }}
+      - name: move into tf folder
+        run: cd tf
 
       - name: Terraform Format
         id: fmt
