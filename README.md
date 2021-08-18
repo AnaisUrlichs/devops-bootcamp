@@ -1,20 +1,32 @@
+## Project Overview
 
-## Project description
+This project is a simple react application that will run a UI to scrape articles from Hackernews.
 
-This is a simple react project that filters articles from Hacker News. Below, you can find additional tutorials on using this application in combination with Codefresh.
+Additionally, this repository has a Dockerfile.
 
-## Tutorial
+The Dockerfile is used to create a container image of our application.
 
-This is the final version of the ["Tutorial on Helm Hooks and Codefresh"](https://codefresh.io/helm-tutorial/helm-hooks/)
+**Build container image**
 
-To learn more about Helm and using Helm in React to build and deploy a Docker image on your Kubernetes cluster follow the tutorial ["Getting started with Helm 3 using React and Codefresh"](https://codefresh.io/helm-tutorial/getting-started-with-helm-3/)
+```
+docker build -t <Dockerhub-ID>/react-example-app:1.0.0 .
+```
 
-## Running the project
+You can find your Dockerhub-ID on the [DockerHub](https://hub.docker.com/).
 
-There are multiple ways that you can get started running this project.
+**Run container image**
 
-* Clone the project
-* 'npm install'
-* 'npm start'
+```
+docker run -p 8080:80 anaisurlichs/react-example-app:1.0.0
+```
 
-Alternatively, [download the Docker image](https://hub.docker.com/repository/docker/anaisurlichs/react-article-display) and run the app via docker
+**Push the container image to the Dockerhub**
+```
+
+```
+
+Once it is on the Dockerhub, if the image is public, anyone will be able to pull the image and run it.
+
+If you are new to Docker commands, please refer to the [following overview]().
+
+
